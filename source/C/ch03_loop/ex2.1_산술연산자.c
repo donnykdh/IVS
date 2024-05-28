@@ -1,11 +1,18 @@
 #include <stdio.h>
 
-// ì‚°ìˆ ì—°ì‚°ì : + - / * %
+
 int main(void){
     int n1 = 33, n2 = 10;
-    printf("%d %c %d= %d\n", n1, '/', n2, n1/n2);
-    // í˜•ë³€í™˜ : ë¬µì‹œì í˜•ë³€í™˜ int i = 3.2
-    //          ëª…ì‹œì í˜•ë³€í™˜ (double)n1
+    printf("°è»ê°á°ú\n");
+    printf("%d %c %d = %d\n", n1, '/', n2, n1/n2);
+    
     printf("%d %c %d = %.3lf\n", n1, '/', n2, (double)n1/n2);
-    printf("%d %c %d= %d\n", n1, '%', n2, n1%n2);
+    printf("%d %c %d = %d\n", n1, '%', n2, n1%n2);
+
+    // ³ª¸ÓÁö ¿¬»êÀÚ : ±×·ìÀ» ³ª´­¶§
+    if(n1%2 == 0){
+        printf("n1Àº Â¦¼ö\n");
+    }else{
+        printf("n1Àº È¦¼ö\n");
+    } 
 }
