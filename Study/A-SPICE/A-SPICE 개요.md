@@ -87,7 +87,7 @@
 
 
 
-### linear-gradient
+<!-- ### linear-gradient
 
 ##### 구문
 
@@ -354,4 +354,4 @@ CSS의 `border-radius` 속성에는 둥근외곽선(rounded border)를 표현하
 ### 특수문자
 ##### **[특수문자 표](http://entitycode.com/#featured-content)**
 ---
-[Index바로가기](#index)
+[Index바로가기](#index) -->
