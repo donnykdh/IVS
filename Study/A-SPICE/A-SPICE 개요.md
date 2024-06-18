@@ -30,6 +30,19 @@
 #### 프로세스 참조 모델 (process Reference Model)
 <p align="center"><img src="/Study/images/prm.PNG" width="70%" height="70%"></p>
 
+* PRM에서 프로세스(32개)는 카테고리 별로 그룹화된다.
+  * Primary Life Cycle Processes: 제품/시스템 개발에 필수적인 프로세스의 그룹
+  * Organizational Life Cycle Processes: 조직 차원에서 관리 및 수행이 필요한 프로세스 그룹
+  * Supporting Life Cycle Processes: 다른 그룹이 원활이 수행되도록 지원하는 프로세스 그룹
+* 카테고리 내에서의 프로세스는 처리하는 활동 유형에 따라 프로세스 그룹으로 그룹화 된다. 카테고리 별 프로세스 그룹은 아래와 같다.
+  
+|          Process Categories         | Process Group |
+|:-----------------------------------:|:-------------:|
+| Primary Life Cycle Processes        | Acquisition Process Group (ACQ)<br/> Supply Process Group (SPL)<br/> System Engineering Process Group (SYS)<br/> Software Engineering Process Group (SWE)<br/>  |
+| Organizational Life Cycle Processes | Management Process Group (MAN)<br/> Process Improvement Process Group (PIM)<br/> Reuse Process Group (REU)<br/>         |
+| Supporting Life Cycle Processes     | Support Process Group (SUP)             |
+
+
 ### linear-gradient
 
 ##### 구문
