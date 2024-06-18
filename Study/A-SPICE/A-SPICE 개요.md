@@ -21,7 +21,7 @@
 ### PAM
 프로세스 평가모델 (Process Assessment Model)<br/>
 <!-- ![Alt text](/Study/images/Relationship%20between%20assessment%20indicators%20and%20process%20capability.jpg) -->
-<img src="/Study/images/Relationship%20between%20assessment%20indicators%20and%20process%20capability.jpg" width="50%" height="50%">
+<p align="center"><img src="/Study/images/Relationship%20between%20assessment%20indicators%20and%20process%20capability.jpg" width="50%" height="50%"></p>
 
 ### linear-gradient
 
