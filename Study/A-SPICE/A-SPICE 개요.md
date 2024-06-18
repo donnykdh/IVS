@@ -3,11 +3,9 @@
 
 ## Index
 
-1.	A-SPICE 특징
-	*	[linear-gradient](#linear-gradient)
+1.	[A-SPICE 개념](#a-spice-개념)
 
-2.	기타
-	*	[IconFont](#iconfont)
+2.	[A-SPICE 특징](#a-spice-특징)
 
 
 ---
@@ -15,13 +13,22 @@
 * Automotive SPICE (Software Process Improvement Capability dEtermination)
 * OEM이 자동차용 S/W를 개발하는 부품 업체의 <ins>개발 프로세스의 역량을 평가</ins>하기 위한 목적으로 만든 산업계 통용 표준
 * 프로세스 능력의 평가를 위한 프로세스 측정 프레임워크 표준 (ISO/IEC 33020) 기반
-* 프로세스 수행능력 평가 프레임워크 표준 (ISO/IEC 15504) 기반
+* <ins>프로세스 수행능력 평가</ins> 프레임워크 표준 (ISO/IEC 15504) 기반
 
 ## A-SPICE 특징
 ### PAM
-프로세스 평가모델 (Process Assessment Model)<br/>
+#### 프로세스 평가모델 (Process Assessment Model)<br/>
 <!-- ![Alt text](/Study/images/Relationship%20between%20assessment%20indicators%20and%20process%20capability.jpg) -->
 <p align="center"><img src="/Study/images/Relationship%20between%20assessment%20indicators%20and%20process%20capability.jpg" width="50%" height="50%"></p>
+
+* 프로세스 수행능력 평가는 PAM을 사용하는 위 2차원 프레임워크를 기반으로 한다.
+* 프로세스의 영역과 범위 등으로 프로세스를 정의하는 <ins>**프로세스 참조 모델(PRM, Process Reference Model)**</ins>
+* 프로세스 속성, 능력 수준(CL, Capability Level) 등에 따라 여러개로 프로세스를 측정하는 <ins>**측정 프레임워크(MF, Measurement Framework)**</ins>로 구성된다.
+* PRM을 통해 수행하려는 프로세스를 정의하고, 세분화된 MF를 이용하여 프로세스를 평가한다.
+
+### PRM
+#### 프로세스 참조 모델 (process Reference Model)
+<p align="center"><img src="/Study/images/prm.PNG" width="70%" height="70%"></p>
 
 ### linear-gradient
 
