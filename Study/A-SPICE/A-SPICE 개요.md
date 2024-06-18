@@ -30,9 +30,7 @@
   * <ins>**CL 1**</ins>에만 적용 가능
   * PRM의  프로세스 성과(process outcome)의 <ins>**수행**</ins> 정도를 확인 할 수 있는 지표 제공
   * <ins>**기본 사례(BP, Basic Practice, 수행 지향적 지표)**</ins>, <ins>**작업 산출물(WP, Work Product, 결과 지향적 지표)**</ins> 두 가지 유형으로 구분 
-  * 작업 산출물의 경우, <ins>**작업 산출물 특성(WPC, Work Product Characteristic)**</ins>이 존재
-<br/>
-<br/>
+  * 작업 산출물의 경우, <ins>**작업 산출물 특성(WPC, Work Product Characteristic)**</ins>이 존재<br/>
 * 프로세스 능력 지표 (Process Capability Indicator)
   * <ins>**CL 2~5**</ins>에 적용
   * <ins>**일반 사례(GP, Generic Practice, 수행 지향적 지표)**</ins>, <ins>**일반 자원(GR, Generic Resource, 결과 지향적 지표)**</ins>
