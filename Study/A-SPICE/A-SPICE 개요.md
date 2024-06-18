@@ -25,6 +25,43 @@
 * 프로세스의 영역과 범위 등으로 프로세스를 정의하는 <ins>**프로세스 참조 모델(PRM, Process Reference Model)**</ins>
 * 프로세스 속성, 능력 수준(CL, Capability Level) 등에 따라 여러개로 프로세스를 측정하는 <ins>**측정 프레임워크(MF, Measurement Framework)**</ins>로 구성된다.
 * PRM을 통해 수행하려는 프로세스를 정의하고, 세분화된 MF를 이용하여 프로세스를 평가한다.
+#### 프로세스 평가 모델에서 사용되는 지표 (Assessment Indicator)
+* 프로세스 수행 지표 (Process Performance Indicator)
+  * <ins>**CL 1**</ins>에만 적용 가능
+  * PRM의  프로세스 성과(process outcome)의 <ins>**수행**</ins> 정도를 확인 할 수 있는 지표 제공
+  * <ins>**기본 사례(BP, Basic Practice, 수행 지향적 지표)**</ins>, <ins>**작업 산출물(WP, Work Product, 결과 지향적 지표)**</ins> 두 가지 유형으로 구분 
+  * 작업 산출물의 경우, <ins>**작업 산출물 특성(WPC, Work Product Characteristic)**</ins>이 존재
+<br/>
+<br/>
+* 프로세스 능력 지표 (Process Capability Indicator)
+  * <ins>**CL 2~5**</ins>에 적용
+  * <ins>**일반 사례(GP, Generic Practice, 수행 지향적 지표)**</ins>, <ins>**일반 자원(GR, Generic Resource, 결과 지향적 지표)**</ins>
+### CL
+#### 프로세스 능력 수준 (Process Capability Level)
+* **CL0: Incomplete**
+  * 프로세스가 이행되지 않거나 목적을 달성하지 못함 
+* **CL1: Performed**
+  * 프로세스가 수행되어 프로세스 목적을 달성
+  * **PA1.1 Process performance**
+* **CL2: Managed**
+  * 프로세스가 계획, 감시, 조정되며 프로세스에 의해 생성된 작업 산출물이 적절하게 작성되고, 통제되고, 유지됨
+  * **PA2.1 Performance management**
+  * **PA2.2 Work product management**
+* **CL3: Established**
+  * 수준 2를 달성할 수 있는 정의된 프로세스가 있으며, 평가 받는 프로세스가 해당 정의된 프로세스로 수행됨
+  * **PA3.1 Process definition**
+  * **PA3.2 Process deployment**
+* **CL4: Predictable**
+  * 정립된 프로세스가 프로세스 성과를 달성하기 위해 정의된 한계 내에서 예측적으로 운영됨
+즉, 프로세스 내의 여러 요소들을 정량적으로 측정 및 분석하여 이상 원인을 식별하여 해당 이상 원인을 해결
+  * **PA4.1 Quantitative analysis**
+  * **PA4.2 Quantitative control**
+* **CL5: Innovating**
+  * 예측 가능한 프로세스가 조직차원의 정략적 피드백을 통해 전사 프로세스를 지속적으로 개선하고 실제 프로젝트를 개선된 프로젝트로 수행
+  * **PA5.1 Process innovation**
+  * **PA5.2 Process innovation implementation**
+
+
 
 ### PRM
 #### 프로세스 참조 모델 (process Reference Model)
@@ -35,12 +72,21 @@
   * Organizational Life Cycle Processes: 조직 차원에서 관리 및 수행이 필요한 프로세스 그룹
   * Supporting Life Cycle Processes: 다른 그룹이 원활이 수행되도록 지원하는 프로세스 그룹
 * 카테고리 내에서의 프로세스는 처리하는 활동 유형에 따라 프로세스 그룹으로 그룹화 된다. 카테고리 별 프로세스 그룹은 아래와 같다.
-  
+
+<p align="center">
+
 |          Process Categories         | Process Group |
 |:-----------------------------------:|:-------------:|
 | Primary Life Cycle Processes        | Acquisition Process Group (ACQ)<br/> Supply Process Group (SPL)<br/> System Engineering Process Group (SYS)<br/> Software Engineering Process Group (SWE)<br/>  |
 | Organizational Life Cycle Processes | Management Process Group (MAN)<br/> Process Improvement Process Group (PIM)<br/> Reuse Process Group (REU)<br/>         |
 | Supporting Life Cycle Processes     | Support Process Group (SUP)             |
+</p>
+
+* VDA Scope<br/>
+필수/기본 범위로 VDA에서 정한 16개의 프로세스를 VDA Scope 이라 한다. 위 그림에서 빨간 테두리의 프로세스에 해당한다.
+
+
+
 
 
 ### linear-gradient
