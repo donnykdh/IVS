@@ -47,7 +47,7 @@
 
 ##### 구문
 
-```css
+```cs
 background: linear-gradient(direction, color-stop1, color-stop2, ...);
 ```
 
