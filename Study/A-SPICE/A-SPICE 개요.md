@@ -3,7 +3,7 @@
 
 ## Index
 
-1.	A-SPICE 개념
+1.	A-SPICE 특징
 	*	[linear-gradient](#linear-gradient)
 
 2.	기타
@@ -11,9 +11,17 @@
 
 
 ---
+## A-SPICE 개념
+* Automotive SPICE (Software Process Improvement Capability dEtermination)
+* OEM이 자동차용 S/W를 개발하는 부품 업체의 <ins>개발 프로세스의 역량을 평가</ins>하기 위한 목적으로 만든 산업계 통용 표준
+* 프로세스 능력의 평가를 위한 프로세스 측정 프레임워크 표준 (ISO/IEC 33020) 기반
+* 프로세스 수행능력 평가 프레임워크 표준 (ISO/IEC 15504) 기반
 
-1.CSS개념
----------
+## A-SPICE 특징
+### PAM
+프로세스 평가모델 (Process Assessment Model)<br/>
+![Alt text](/Study/images/Relationship%20between%20assessment%20indicators%20and%20process%20capability.PNG)
+
 
 ### linear-gradient
 
