@@ -72,9 +72,16 @@
 **SWE.1.BP8**: 합의된 소프트웨어 요구사항을 의사소통한다.
 
 ## SWE.2
+### Software Architectural Design
+소프트웨어 아키텍처 설계
+### Outcomes
+### Base Practice
 
 ## SWE.3
-#### 소프트웨어 상세 설계 및 유닛 개발
+### Software Detailed Designed Construction 
+소프트웨어 상세 설계 및 유닛 개발
+### Outcomes
+### Base Practice
 
 ## SWE.4
 ### Software Unit Verification
@@ -165,3 +172,12 @@
 > 아키텍처 기반으로 시험 기준(test case)을 수립하고 통합된 소프트웨어를 검증한다.
 
 > 검증 결과 요약하여 관련자에게 공유한다.
+
+
+## 품질보증 - Review
+## 품질보증 - Audit
+* planning
+* 산출물 문서 검토
+* Audit Meeting
+* Audit 결과 공유
+* 시정 요구 조치
