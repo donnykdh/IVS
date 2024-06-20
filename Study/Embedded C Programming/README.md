@@ -67,7 +67,7 @@ int main() {
 |:-----------------------------------:|:-------------:|:-------------:|
 |int|32 bit|32 bit|
 |short|16 bit|16 bit|
-|long|32 bit|<span style="color:red">64 bit</span>|
+|long|32 bit|${\textsf{\color{red}64 bit}}$|
 |long long|64 bit|<span style="color:red">64 bit</span>|
 |pointer(*)|32 bit|<span style="color:red">64 bit</span>|
 </p>
