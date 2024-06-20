@@ -61,16 +61,16 @@ int main() {
 }
 ```
 
-<p align="center">
+<div align="center">
 
 |자료형|32 bit OS|64 bit OS|
 |:-----------------------------------:|:-------------:|:-------------:|
 |int|32 bit|32 bit|
 |short|16 bit|16 bit|
 |long|32 bit|${\textsf{\color{red}64 bit}}$|
-|long long|64 bit|<span style="color:red">64 bit</span>|
-|pointer(*)|32 bit|<span style="color:red">64 bit</span>|
-</p>
+|long long|64 bit|${\textsf{\color{red}64 bit}}$|
+|pointer(*)|32 bit|${\textsf{\color{red}64 bit}}$|
+</div>
 위와 같이 OS가 다르면 비트 수가 다르기 때문에 자료형과 크기를 반드시 함께 선언해준다.
 
 ## 연산자
