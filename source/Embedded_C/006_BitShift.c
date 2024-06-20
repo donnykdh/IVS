@@ -19,7 +19,7 @@ int main()
     // int num1 = -2000; //  -2000: 1111 1000 0011 0000
     // printf("%d\n", num1 / 256);
     // printf("%d\n", num1 >> 8);
-
-    system("pause");    
+   
     return 0;
 }
+

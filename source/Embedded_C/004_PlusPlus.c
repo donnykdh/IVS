@@ -10,5 +10,5 @@ int main()
     printf("num : %d\n", num);
     printf("++num : %d\n", ++num);
     printf("--num : %d\n", --num);
-    system("pause");
+    return 0;
 }

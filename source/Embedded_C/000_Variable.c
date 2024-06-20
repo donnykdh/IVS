@@ -16,6 +16,5 @@ int main()
    // char, short, int는 %d로 출력하고 long은 %ld, long long은 %lld로 출력
     printf("%d %d %d %ld %lld\n", num1, num2, num3, num4, num5);
 
-    system("pause");
     return 0;
 }
