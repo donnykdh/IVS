@@ -1,5 +1,5 @@
 # Embedded C Programming
-> 실제 개발에 있어서 생각해야 하는 부분은 중심으로 내용 정리
+> 실제 개발에 있어서 생각해야 하는 부분을 중심으로 내용 정리
 
 ## Index
 
@@ -134,7 +134,94 @@ int main()
 ```
 * -125의 2의 보수는 1000 0011이고 오른쪽으로 5 쉬프트될 때 **빈자리는 1로 채워진다.** signed integer이므로 최상위 비트인 1로 채워진다.<br/>
 * 비트 쉬프트로 곱셈과 나눗셈을 대신할 수 있다.
-    > 131 >> 5 는 131 / 2^5 의 값과 같다.
+    > 131 >> 5 는 131 / 2^5 의 값과 같다.<br/>
 
+### 모토로라    
+데이터 크기가 커졌을 때 재배열할 필요 없다.
+
+## 조건문
+
+## 반복문
+반드시 반복문으로 코딩할 필요는 없다. 유지보수가 필요없고 수정할 일이 없다면 하드코딩도 괜찮다.
+
+## 배열
+읽는 방법
+> int numArr[10] = {}
+
+뛰어 넘는 개념
 
 ## 포인터
+```C
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int *numPtr;    // 포인터 변수 선언
+    int num1 = 10;
+    numPtr = &num1; // num1 메모리 주소를 포인터 변수에 저장
+    printf("%p, %d\n", numPtr, *numPtr);
+    printf("%p, %d\n", &num1, num1);
+    printf("%d\n", sizeof(numPtr));
+    printf("%d\n", sizeof(int*));
+    printf("%d\n", sizeof(char*));
+    system("pause");
+    return 0;
+}
+```
+```
+0061FF18, 10
+0061FF18, 10
+4
+4
+4
+```
+sizeof(numPtr), sizeof(int*), sizeof(char*) 값은 모두 동일하다.<br/>
+&rarr; 자료형 타입이 달라도 sizeof의 출력은 동일하다.<br/>
+
+
+--------  
+전역변수는 빌드하면 주소 고정된다. 알아서 초기화 해준다.  
+
+어떤 주소의 값을 알려줘. 그 값을 바꿔줘  
+
+```C
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char arr[10];
+    // 배열을 3으로 초기화
+    memset(arr, 3, sizeof(arr));
+
+    // 초기화된 배열의 내용 출력
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+```
+지역변수는 함수가 실행될 때 메모리에 할당된다. 함수가 끝나면 메모리가 해제된다. 초기화가 중요<br/>
+```C
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    int arr[10];
+    // 배열을 3으로 초기화
+    memset(arr, 3, sizeof(arr));
+
+    // 초기화된 배열의 내용 출력
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+```
+```
+50529027 50529027 50529027 50529027 50529027 50529027 50529027 50529027 50529027 50529027
+```
+
+배열의 자료형을 int로 바꿨을 때 결과가 다르다. memset은 바이트 단위로 초기화 하기 때문이다.
