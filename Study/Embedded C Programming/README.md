@@ -225,3 +225,24 @@ int main()
 ```
 
 배열의 자료형을 int로 바꿨을 때 결과가 다르다. memset은 바이트 단위로 초기화 하기 때문이다.
+
+```C
+#include <stdio.h>
+void modifyValue(int value)
+{
+    int tempvalue = 10;
+    value = tempvalue; // 전달된 value 값을 변경
+}
+int main()
+{
+    int num = 5;
+    printf("변경 전: %d\n", num);
+
+    modifyValue(num); // 함수에 값을 전달
+    printf("변경 후: %d\n", num);
+    return 0;
+}
+```
+modifyValue 함수가 호출 될 때 stack에는 tempvalue, 매게변수, 함수가 끝나면 어디로 가야하는지 정보가 메모리에 할당된다.<br/>
+
+

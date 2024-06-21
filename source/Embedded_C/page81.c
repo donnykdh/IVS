@@ -8,7 +8,7 @@ typedef struct
 // 구조체를 매개변수로 받는 함수 정의
 int calculate_1(Data *data) //포인터를 받는다.
 {
-    int sum = data->var1 + data->var2 + data->var3 + data->var4 + data->var5 +
+    int sum = data->var2 + data->var2 + data->var3 + data->var4 + data->var5 +
               data->var6 + data->var7 + data->var8 + data->var9 + data->var10 +
               data->var11 + data->var12 + data->var13 + data->var14 + data->var15;
     return sum;
