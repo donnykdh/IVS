@@ -34,4 +34,4 @@
  }
 ```
 다음 예제 코드를 아래 과정으로 파일을 이동시킨 뒤 cmd창에 명령어를 입력하면 바로 보드에 올려 실행시킬 수 있다.
-<p align="center"><img src="/Study/images/C:\IVS\IVS\Study\images\flash.png"width="100%" height="100%"></p>
+<p align="center"><img src="/Study/images/flash.png" width="100%" height="100%"></p>
