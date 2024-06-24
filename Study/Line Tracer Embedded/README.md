@@ -5,15 +5,11 @@
 
 1.	[Embedded Arduino](#Arduino)
 
-2.	[연산자](#연산자)
+2.	[Assemble Cooling Fan](#assemble-cooling-fan)
 
-3.  [조건문](#조건문)
+3.  [Line Tracer](#line-tracer)
 
-4.  [반복문](#반복문)
 
-5.  [배열](#배열)
-
-6.  [포인터](#포인터)
 ## Embedded Arduino
 ### Flash
 ```Arduino
@@ -133,6 +129,72 @@ void setup() {
 <img src="/Study/images/motor2.jpg" width="30%" height="30%">
 </p>
 
+<div align="center">
+
+|Input||Motor A Output|
+|:----------:|:-------------:|:-------------:|
+|1A|1B||
+|L|L|Off|
+|H|L|Forward|
+|L|H|Reverse|
+|H|H|Off
+
+</div>
+1A와 1B에 입력을 서로 다르게하여 모터의 방향을 바꿀 수 있다.
+
+> Green Switch : 10씩 Fan 제어량을 증가시킨다.<br/>
+> Yellow Switch : 10씩 Fan 제어량을 감소시킨다.
+```Arduino
+#definePIN_MOTOR_CTRL_0 3
+#definePIN_MOTOR_CTRL_1 11
+#definePIN_SWITCH_GREEN 8
+#definePIN_SWITCH_YELLOW7
+
+int prevSwitchGreen = HIGH;
+int prevSwitchYellow = HIGH;
+byte motorCtrlValue0 = 0;
+
+voidsetup() {
+    pinMode(PIN_SWITCH_GREEN, INPUT);
+    pinMode(PIN_SWITCH_YELLOW, INPUT);
+    pinMode(PIN_MOTOR_CTRL_0, OUTPUT);
+    pinMode(PIN_MOTOR_CTRL_1, OUTPUT);
+    analogWrite(PIN_MOTOR_CTRL_0, 0);
+    analogWrite(PIN_MOTOR_CTRL_1, 0);
+    Serial.begin(115200);
+}
+voidloop() {
+    int currentSwitchGreen= digitalRead(PIN_SWITCH_GREEN);
+    int currentSwitchYellow= digitalRead(PIN_SWITCH_YELLOW);
+    if ((prevSwitchGreen== LOW) && (currentSwitchGreen== HIGH))
+    {
+        motorCtrlValue0 = (motorCtrlValue0 < 245) ? (motorCtrlValue0 + 10) : 255;
+        analogWrite(PIN_MOTOR_CTRL_0, motorCtrlValue0);
+        analogWrite(PIN_MOTOR_CTRL_1, 0);
+        Serial.println(motorCtrlValue0);
+    }
+    if ((prevSwitchYellow== LOW) && (currentSwitchYellow== HIGH))
+    {
+        motorCtrlValue0 = (motorCtrlValue0 > 10) ? (motorCtrlValue0 -10) : 0;
+        analogWrite(PIN_MOTOR_CTRL_0, motorCtrlValue0);
+        analogWrite(PIN_MOTOR_CTRL_1, 0);
+        Serial.println(motorCtrlValue0);
+    }
+    prevSwitchGreen= currentSwitchGreen;
+    prevSwitchYellow= currentSwitchYellow;
+    delay(100);
+}
+```
+
+### Capacitor
+* Capacitor란 콘덴서 축전지라고도 불리는 소자로 전기를 일시적으로 저장한다.
+* Capacitor가 없다면 서보 모터가 아두이노의 최대 전류 용량보다 많은 전류를 소모할 경우 아두이노 보드가 비정상 동작 할 수 있다. Capacitor는 +, -극이 정해져 있다.
+
+### PWM
+
+## Assemble Cooling Fan
+
+## Line Tracer
 
 
 
