@@ -130,7 +130,7 @@ void setup() {
 
 <p align="center">
 <img src="/Study/images/motor.png" width="40%" height="40%">
-<img src="/Study/images/motor2.png" width="30%" height="30%">
+<img src="/Study/images/motor2.jpg" width="30%" height="30%">
 </p>
 
 
