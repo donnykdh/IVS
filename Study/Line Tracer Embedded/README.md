@@ -42,3 +42,44 @@ Flash>avrdude–C avrdude.conf-v-patmega328p -carduino–PCOM5-b115200 -D -Uflas
 ### ADC
 <p align="center"><img src="/Study/images/adc.png" width="40%" height="40%"></p>
 
+```Arduino
+void setup() {
+ Serial.begin(115200);
+ }
+ void loop() {
+ int switchGreen = analogRead(A0);
+ int switchYellow = analogRead(A1);
+ Serial.print("Green:");
+ Serial.print(switchGreen);
+ Serial.print(", Yellow:");
+ Serial.println(switchYellow);
+ delay(1000);
+ }
+ ```
+ 위 코드를 실행시켰을 때 다음과 같은 결과가 나오는 것을 확인할 수 있다.
+ ```
+ Green:1023. Yellow:689
+ Green:1023. Yellow:806
+ Green:1023. Yellow:869
+ Green:1023. Yellow:0
+ Green:1023. Yellow:701
+ Green:1023. Yellow:273
+ ```
+ 스위치를 누르면 전압과 그라운드가 쇼트되어 값이 0이 된다. Green 스위치의 값은 항상 1023인데 Yellow 스위치의 값은 일정하지 않다.
+ #### analogRead()
+ 지정한 아날로그 핀에서 값을 읽는다. 0에서 5V 사이의 입력 전압을 0에서 1024사이의 정수 값으로 대응시키는 것을 의미한다. 해상도는 5V/1024 (4.9mV) 이다.<br/>
+ 실제 현업에서 사용하는 보드는 보통 12bit로 좀 더 정밀한 조절이 가능하다.
+ 
+ ### Pull-Up & Pull-Down 저항 
+
+ <p align="center"><img src="/Study/images/pull_up_down.png" width="100%" height="100%"></p>
+
+ <div align="center">
+
+||풀업 저항 상태|풀다운 저항 상태|
+|:-----------------------------------:|:-------------:|:-------------:|
+|스위치 off|HIGH(1)|LOW(0)|
+|스위치 on|LOW(0)|HIGH(1)|
+
+</div>
+
