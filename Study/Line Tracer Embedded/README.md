@@ -12,7 +12,7 @@
 
 ## Embedded Arduino
 ### Flash
-```arduino
+```cpp
  intcount = 0;
  // the setup function runs once when you press reset or power the board
  voidsetup() {
@@ -38,7 +38,7 @@ Flash>avrdude–C avrdude.conf-v-patmega328p -carduino–PCOM5-b115200 -D -Uflas
 ### ADC
 <p align="center"><img src="/Study/images/adc.png" width="40%" height="40%"></p>
 
-```Arduino
+```cpp
 void setup() {
  Serial.begin(115200);
  }
@@ -84,7 +84,7 @@ void setup() {
 
 <p align="center"><img src="/Study/images/switch.png" width="40%" height="40%"></p>
 
-```Arduino
+```cpp
 void setup() {
  pinMode(8, INPUT);
  pinMode(7, INPUT);
@@ -144,7 +144,7 @@ void setup() {
 
 > Green Switch : 10씩 Fan 제어량을 증가시킨다.<br/>
 > Yellow Switch : 10씩 Fan 제어량을 감소시킨다.
-```Arduino
+```cpp
 #definePIN_MOTOR_CTRL_0 3
 #definePIN_MOTOR_CTRL_1 11
 #definePIN_SWITCH_GREEN 8
