@@ -58,12 +58,12 @@ void setup() {
  ```
  위 코드를 실행시켰을 때 다음과 같은 결과가 나오는 것을 확인할 수 있다.
  ```
- Green:1023. Yellow:689
- Green:1023. Yellow:806
- Green:1023. Yellow:869
- Green:1023. Yellow:0
- Green:1023. Yellow:701
- Green:1023. Yellow:273
+ Green:1023, Yellow:689
+ Green:1023, Yellow:806
+ Green:1023, Yellow:869
+ Green:1023, Yellow:0
+ Green:1023, Yellow:701
+ Green:1023, Yellow:273
  ```
  스위치를 누르면 전압과 그라운드가 쇼트되어 값이 0이 된다. Green 스위치의 값은 항상 1023인데 Yellow 스위치의 값은 일정하지 않다.
  #### analogRead()
@@ -82,4 +82,8 @@ void setup() {
 |스위치 on|LOW(0)|HIGH(1)|
 
 </div>
+사용하지 않는 핀은 풀다운 시켜줘서 노이즈, 정전기 방지를 해줘야 한다.
 
+### switch
+
+<p align="center"><img src="/Study/images/switch.png" width="30%" height="30%"></p>
