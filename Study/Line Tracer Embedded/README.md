@@ -40,5 +40,5 @@
 Flash>avrdude–C avrdude.conf-v-patmega328p -carduino–PCOM5-b115200 -D -Uflash:w:HelloWorld.ino.standard.hex:i
 ```
 ### ADC
-<p align="center"><img src="/Study/images/adc.png" width="60%" height="60%"></p>
+<p align="center"><img src="/Study/images/adc.png" width="40%" height="40%"></p>
 
