@@ -128,8 +128,10 @@ void setup() {
 
  ### Motor
 
-<img src="/Study/images/motor.png" width="50%" height="50%">
-<img src="/Study/images/motor2.jpg" width="50%" height="50%">
+<p align="center">
+<img src="/Study/images/motor.png" width="40%" height="40%">
+<img src="/Study/images/motor2.png" width="30%" height="30%">
+</p>
 
 
 
