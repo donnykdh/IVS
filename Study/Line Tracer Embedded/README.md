@@ -12,7 +12,7 @@
 
 ## Embedded Arduino
 ### Flash
-```Arduino
+```arduino
  intcount = 0;
  // the setup function runs once when you press reset or power the board
  voidsetup() {
