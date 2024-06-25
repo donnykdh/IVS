@@ -205,6 +205,12 @@ voidloop() {
     > 서보모터를 90도로 동작 (최대 180도까지 가능)
 
 <br/>
+
+<p align="center">
+<img src="/Study/images/fan.jpg" width="30%" height="30%">
+</p>
+
+
 Cooling Fan 예제 코드
 
 ```cpp
@@ -385,6 +391,7 @@ void loop() {
   delay(100);
 }
 ```
+### Interrupt
 
 
 
