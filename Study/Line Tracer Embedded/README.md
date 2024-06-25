@@ -392,8 +392,56 @@ void loop() {
 }
 ```
 ### Interrupt
+* 아두이노 우노에서 2번, 3번 핀 사용 가능하다.
+* `attachInterrupt(digitalPinToInterrupt(pin), ISR, mode);`
+* 사용할 pin
+* ISP: 서비스 루틴 이름(함수 이름)
+* mode: 어떤 트리거가 발생할 때 인터럽트를 실행할지<br/>
 
+위 코드에서 `#define pin_SWITCH_BLACK 2`로 바꿔 주고 `isrSwitchBlack()`함수를 추가 해주고 main함수에서 인터럽트를 걸어준다.
 
+```cpp
+void isrSwitchBlack(){
+    rotateFlag = 0;
+    servoRotate.write(90);
+}
+```
+```cpp
+void setup() {
+  attachInterrupt(digitalPinToInterrupt(PIN_SWITCH_BLACK), isrSwitchBlack, RISING);
+```
+loop 한번을 실행하는데 걸리는 시간 측정하기
+```cpp
+int taskStartTime = 0;
+int taskEndTime = 0;
+
+void loop(){
+    taskStartTime = micros();
+    .
+    .
+    .
+    taskEndTime = micros();
+    Serial.println("execution time is " + (String)(taskEndTime - TtaskStartTime) + "[us]");
+}
+``` 
+```time = micros()```
+
+* Task 총 실행시간은 80% 이하여야 한다.
+* Stack 최대 사용률은 70% 이하여야 한다.
+
+### EEPROM
+꺼졌다 켜져도 정보가 지워지지 않고 남아 있다.
+> #include <eeprom.h>
+
+`EEPROM.read(0);`
+
+0번주소에 저장된 값을 읽겠다. 하나의 주소에 한 바이트 값 저장 가능<br/>
+
+`EEPROM.write(0, EEPROM.read(0) + 1);`
+
+0번 주소에 EEPROM.read(0)값에 1을 더하여 저장한다.
+
+> 리셋버튼 -> loop함수에서 setup함수로 간다.
 
 ## Line Tracer
 
