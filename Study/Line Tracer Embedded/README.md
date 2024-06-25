@@ -131,7 +131,7 @@ void setup() {
 
 <div align="center">
 
-|Input||Motor A Output|
+|Input|Input|Motor A Output|
 |:----------:|:-------------:|:-------------:|
 |1A|1B||
 |L|L|Off|
@@ -208,7 +208,7 @@ voidloop() {
 Cooling Fan 예제 코드
 
 ```cpp
-#include <Servo.h>
+#include <Servo.h>  // 서보모터 라이브러리
 #define PIN_MOTOR_CTRL_0 3
 #define PIN_MOTOR_CTRL_1 11
 #define PIN_SWITCH_GREEN 8
@@ -216,15 +216,15 @@ Cooling Fan 예제 코드
 #define PIN_SWITCH_RED 6
 #define PIN_SWITCH_BLACK 5
 #define PIN_SWITCH_BLUE 4
-#define PIN_SERVO_CTRL 13
+#define PIN_SERVO_CTRL 13   // 서보 컨트롤 핀
 int prevSwitchGreen = HIGH;
 int prevSwitchYellow = HIGH;
 int prevSwitchRed = HIGH;
 int prevSwitchBlack = HIGH;
 int prevSwitchBlue = HIGH;
 byte motorCtrlValue0;
-byte servoPosition = 90;
-Servo servoRotate;
+byte servoPosition = 90;    // 90도(전방) 초기화
+Servo servoRotate;  // 객체 생성
 ```
 ```cpp
 void setup() {
@@ -270,6 +270,7 @@ void loop() {
   prevSwitchGreen = currentSwitchGreen;
   prevSwitchYellow = currentSwitchYellow;
   prevSwitchRed = currentSwitchRed;
+
   // Rotate Control
   int currentSwitchBlack = digitalRead(PIN_SWITCH_BLACK);
   int currentSwitchBlue = digitalRead(PIN_SWITCH_BLUE);
@@ -288,6 +289,104 @@ void loop() {
   delay(100);
 }
 ```
+Cooling Fan 연습문제
+```
+1.초록색버튼:최대속도의50%로Fan 회전.(제어량과회전속도는비례한다고가정)
+2.노란색버튼: 최대속도로Fan 회전.
+3.빨간색버튼: Fan 회전정지.
+4.검정색버튼: Fan 목의회전을멈추고정면(90도, 나를바라보는방향)을바라본다.
+5.파란색버튼: Fan 목이30~150도사이에서연속적으로회전한다.(30도, 150도도달시Fan 목회전방향전환)
+※ 제약: Servo 의position 설정시servoRotate.read()의return값을변수copy 없이 즉시전달인자로활용해야한다.
+( servoRotate.write(ServoRotate.read()) )
+```
+```cpp
+#include <Servo.h>
+#define PIN_MOTOR_CTRL_0 3
+#define PIN_MOTOR_CTRL_1 11
+#define PIN_SWITCH_GREEN 8
+#define PIN_SWITCH_YELLOW 7
+#define PIN_SWITCH_RED 6
+#define PIN_SWITCH_BLACK 5
+#define PIN_SWITCH_BLUE 4
+#define PIN_SERVO_CTRL 13
+int prevSwitchGreen = HIGH;
+int prevSwitchYellow = HIGH;
+int prevSwitchRed = HIGH;
+int prevSwitchBlack = HIGH;
+int prevSwitchBlue = HIGH;
+byte motorCtrlValue0;
+byte servoPosition = 90;
+int rotateFlag = 0;
+Servo servoRotate;
+```
+```cpp
+void setup() {
+  servoRotate.attach(PIN_SERVO_CTRL);
+  servoRotate.write(servoPosition);
+  pinMode(PIN_SWITCH_GREEN, INPUT);
+  pinMode(PIN_SWITCH_YELLOW, INPUT);
+  pinMode(PIN_SWITCH_RED, INPUT);
+  pinMode(PIN_SWITCH_BLACK, INPUT);
+  pinMode(PIN_SWITCH_BLUE, INPUT);
+  pinMode(PIN_MOTOR_CTRL_0, OUTPUT);
+  pinMode(PIN_MOTOR_CTRL_1, OUTPUT);
+  pinMode(PIN_SERVO_CTRL, OUTPUT);
+  analogWrite(PIN_MOTOR_CTRL_0, 0);
+  analogWrite(PIN_MOTOR_CTRL_1, 0);
+  Serial.begin(115200);
+}
+```
+```cpp
+void loop() {
+  // Fan Control
+  int currentSwitchGreen = digitalRead(PIN_SWITCH_GREEN);
+  int currentSwitchYellow = digitalRead(PIN_SWITCH_YELLOW);
+  int currentSwitchRed = digitalRead(PIN_SWITCH_RED);
+  if ((prevSwitchGreen == LOW) && (currentSwitchGreen == HIGH)) {
+    motorCtrlValue0 = 127;  // 최대 속도의 50프로
+    analogWrite(PIN_MOTOR_CTRL_0, motorCtrlValue0);
+    Serial.println(motorCtrlValue0);
+  }
+  if ((prevSwitchYellow == LOW) && (currentSwitchYellow == HIGH)) {
+    motorCtrlValue0 = 255;  // 최대 속도
+    analogWrite(PIN_MOTOR_CTRL_0, motorCtrlValue0);
+    Serial.println(motorCtrlValue0);
+  }
+  if ((prevSwitchRed == LOW) && (currentSwitchRed == HIGH)) {
+    motorCtrlValue0 = 0;  // 정지
+    analogWrite(PIN_MOTOR_CTRL_0, motorCtrlValue0);
+    Serial.println(motorCtrlValue0);
+  }
+  prevSwitchGreen = currentSwitchGreen;
+  prevSwitchYellow = currentSwitchYellow;
+  prevSwitchRed = currentSwitchRed;
+
+  // Rotate Control
+  int currentSwitchBlack = digitalRead(PIN_SWITCH_BLACK);
+  int currentSwitchBlue = digitalRead(PIN_SWITCH_BLUE);
+  
+  if ((prevSwitchBlack == LOW) && (currentSwitchBlack == HIGH)) {
+    rotateFlag = 0;
+    servoPosition = 90;
+    servoRotate.write(servoPosition);
+    Serial.println(servoPosition);
+  }
+  if ((prevSwitchBlue == LOW) && (currentSwitchBlue == HIGH)) {
+    rotateFlag = 1;
+  }
+  if ((servoRotate.read() < 30) || (servoRotate.read() > 150)) {
+    rotateFlag = rotateFlag * (-1);
+  }
+  if (rotateFlag != 0) {
+    servoRotate.write(servoRotate.read() + rotateFlag);
+  }
+  prevSwitchBlack = currentSwitchBlack;
+  prevSwitchBlue = currentSwitchBlue;
+  delay(100);
+}
+```
+
+
 
 ## Line Tracer
 
