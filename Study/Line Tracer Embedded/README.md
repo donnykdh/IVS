@@ -431,7 +431,7 @@ void loop(){
 
 ### EEPROM
 꺼졌다 켜져도 정보가 지워지지 않고 남아 있다.
-> #include <eeprom.h>
+> #include <EEprom.h>
 
 `EEPROM.read(0);`
 
@@ -443,8 +443,20 @@ void loop(){
 
 > 리셋버튼 -> loop함수에서 setup함수로 간다.
 
-## Line Tracer
+### Endian
+* Big-endian
+* Little-endian
 
+## Line Tracer
+### Voltage
+```map(adcInput, 0, 1023, 0, 5000);```
+
+adcInput을 0~1023에서 0~5000으로 확장 시킨다.
+
+#### 전압 분배
+아두이노의 pin의 입력은 5V를 초과하면 안된다.
+
+### IrRemote
 
 
 
