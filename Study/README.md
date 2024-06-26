@@ -10,3 +10,5 @@ README.md 수업 자료를 정리한 후, 이 곳에 진행된 내용을 작성�
 
 > - 240620 - 240621 | __[Embedded C Programming](./Embedded%20C%20Programming/README.md)__
 
+> - 240624 - 240626 | __[Line Tracer Embedded](./Line%20Tracer%20Embedded/README.md)__
+
