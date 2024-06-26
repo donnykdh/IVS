@@ -1,0 +1,6 @@
+{
+    "board": "arduino:avr:uno",
+    "port": "COM4",
+    "sketch": "calibration.ino",
+    "programmer": "arduino:avrispmkii"
+}
