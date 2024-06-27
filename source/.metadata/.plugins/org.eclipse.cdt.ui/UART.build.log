@@ -1,0 +1,13 @@
+15:38:12 **** Incremental Build of configuration TriCore Debug (TASKING) for project UART ****
+make --output-sync -j12 all 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): ELF size v1.1r8 Build 22011964
+Invoking: Print Size
+elfsize  "UART.elf"
+Total sizes:
+ROM: 0x3d21 (15649) = code: 0x3b14 (15124) + romdata: 0x20d (525)
+RAM: 0x97cd (38861) = data + bss
+Finished building: UART.siz
+ 
+
+15:38:12 Build Finished. 0 errors, 0 warnings. (took 397ms)
+
