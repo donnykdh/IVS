@@ -1,0 +1,37 @@
+/*
+ * ADC.h
+ *
+ *  Created on: 2024. 6. 28.
+ *      Author: USER
+ */
+
+#ifndef DRVADC_H
+#define DRVADC_H
+
+
+#include "Ifx_Types.h"
+
+typedef enum{
+    ADC_GROUP_CH0 = 0u,
+    ADC_GROUP_CH1,
+    ADC_GROUP_CH2,
+    ADC_GROUP_CH3,
+    ADC_GROUP_CH4,
+    ADC_GROUP_CH5,
+    ADC_GROUP_CH6,
+    ADC_GROUP_CH7,
+    ADC_GROUP_MAX,
+}ADC_GROUP0;
+
+typedef struct{
+        uint32 UlSSense1_RAW;
+        uint32 UlSSense2_RAW;
+        uint32 UlSSense3_RAW;
+}SensorAdcRaw;
+
+extern SensorAdcRaw stSensorAdcRaw;
+
+extern void DrvAdcInit(void);
+extern void DrvAdc_GetAdcRawGroup0(void);
+
+#endif

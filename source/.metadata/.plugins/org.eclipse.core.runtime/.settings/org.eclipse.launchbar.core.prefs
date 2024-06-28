@@ -1,7 +1,0 @@
-LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
-LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
-LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:LED_Blink,org.eclipse.launchbar.core.descriptorType.default\:UART,org.eclipse.launchbar.core.descriptorType.default\:Scheduling
-eclipse.preferences.version=1
-org.eclipse.launchbar.core.descriptorType.default\:LED_Blink/activeLaunchMode=debug
-org.eclipse.launchbar.core.descriptorType.default\:LED_Blink/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

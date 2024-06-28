@@ -1,0 +1,13 @@
+13:44:04 **** Incremental Build of configuration TriCore Debug (TASKING) for project ADC ****
+make --output-sync -j12 all 
+TASKING VX-toolset for AURIX Development Studio (non-commercial): ELF size v1.1r8 Build 22011964
+Invoking: Print Size
+elfsize  "ADC.elf"
+Total sizes:
+ROM: 0x6163 (24931) = code: 0x5c4a (23626) + romdata: 0x519 (1305)
+RAM: 0x99a5 (39333) = data + bss
+Finished building: ADC.siz
+ 
+
+13:44:05 Build Finished. 0 errors, 0 warnings. (took 418ms)
+

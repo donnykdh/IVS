@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;ADC/ADC.h&apos; to &apos;DrvADC.h&apos;" description="Rename resource &apos;ADC.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="ADC.h" name="DrvADC.h" stamp="1719538722426" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;ADC/ADC.c&apos; to &apos;DrvADC.c&apos;" description="Rename resource &apos;ADC.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="ADC.c" name="DrvADC.c" stamp="1719538731340" updateReferences="true"/>
+</session>
