@@ -102,6 +102,56 @@ void _out_uart3(const unsigned char chr)
     IfxAsclin_Asc_blockingWrite(&g_ascHandle3, chr);
 }
 
+
+
+void _out_uart3_INT(int num)
+{
+    char buffer[50];
+    sprintf(buffer, "%d", num); // int 값을 문자열로 변환
+
+    for (int i = 0; i < strlen(buffer); i++) {
+        while (IfxAsclin_Asc_canWriteCount(&g_ascHandle3, 1, TIME_INFINITE) != TRUE);
+        IfxAsclin_Asc_blockingWrite(&g_ascHandle3, (unsigned char)buffer[i]);
+    }
+
+}
+
+
+/* 시리얼 라인에서 문자를 수신 (대기) */
+unsigned char _in_uart3(void)
+{
+    return IfxAsclin_Asc_blockingRead(&g_ascHandle3);
+}
+
+
+
+
+
+
+
+
+
+//void _out_uart3_INT(int num)
+//{
+//    char number[4] = {0,};
+//    number[3] = (uint8)((num)%10 + 48);
+//    number[2] = (uint8)((num/10)%10 + 48);
+//    number[1] = (uint8)((num/100)%10 + 48);
+//    number[0] = (uint8)((num/1000) + 48);
+//    _out_uart3(number[0]);
+//    _out_uart3(number[1]);
+//    _out_uart3(number[2]);
+//    _out_uart3(number[3]);
+//}
+
+
+
+
+
+
+
+
+
 //void _out_uart3(double num)
 //{
 //    uint8 buffer[sizeof(double)];
@@ -126,39 +176,6 @@ void _out_uart3(const unsigned char chr)
 //        IfxAsclin_Asc_blockingWrite(&g_ascHandle3, (unsigned char)buffer[i]);
 //    }
 //}
-
-void _out_uart3_INT(int num)
-{
-    char buffer[50];
-    sprintf(buffer, "%d", num); // int 값을 문자열로 변환
-
-    for (int i = 0; i < strlen(buffer); i++) {
-        while (IfxAsclin_Asc_canWriteCount(&g_ascHandle3, 1, TIME_INFINITE) != TRUE);
-        IfxAsclin_Asc_blockingWrite(&g_ascHandle3, (unsigned char)buffer[i]);
-    }
-
-}
-
-//void _out_uart3_INT(int num)
-//{
-//    char number[4] = {0,};
-//    number[3] = (uint8)((num)%10 + 48);
-//    number[2] = (uint8)((num/10)%10 + 48);
-//    number[1] = (uint8)((num/100)%10 + 48);
-//    number[0] = (uint8)((num/1000) + 48);
-//    _out_uart3(number[0]);
-//    _out_uart3(number[1]);
-//    _out_uart3(number[2]);
-//    _out_uart3(number[3]);
-//}
-
-/* 시리얼 라인에서 문자를 수신 (대기) */
-unsigned char _in_uart3(void)
-{
-    return IfxAsclin_Asc_blockingRead(&g_ascHandle3);
-}
-
-
 
 
 

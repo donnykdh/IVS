@@ -9,3 +9,7 @@
 1719534179294	Delete resource 'Scheduling_UART'
 1719534507688	Delete 4 resources
 1719534535035	Delete resource 'Scheduling_UART/Cpu0_Main.c'
+1719555408296	Delete 2 resources
+1719557931690	Delete resource 'PWM/Ifx_Types.h'
+1719558078010	Delete resource 'PWM_NEW/Cpu0_Main.c'
+1719562389516	Delete resource 'PWM'
