@@ -21,5 +21,7 @@ extern void _out_uart3(const unsigned char str);
 
 extern void _out_uart3_INT(int num);
 
+void _out_uart3_FLOAT(float num);
+
 extern unsigned char _in_uart3(void);
 #endif

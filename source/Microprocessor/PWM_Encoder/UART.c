@@ -11,6 +11,7 @@
 #include <string.h>
 #include "IfxStdIf_DPipe.h"
 #include "isr_priority.h"
+//#include "UART.h"
 
 // 버퍼 크기 및 보드레이트 정의
 #define ASC_TX_BUFFER_SIZE 256
@@ -114,6 +115,39 @@ void _out_uart3_INT(int num)
         IfxAsclin_Asc_blockingWrite(&g_ascHandle3, (unsigned char)buffer[i]);
     }
 
+}
+
+
+void _out_uart3_FLOAT(float num)
+{
+    char buffer[50];
+
+    // 정수 부분과 소수 부분을 분리
+    int integerPart = (int)num;
+    float fractionalPart = num - (float)integerPart;
+
+    // 정수 부분을 문자열로 변환
+    sprintf(buffer, "%d", integerPart);
+
+    // 버퍼에 정수 부분 쓰기
+    for (int i = 0; i < strlen(buffer); i++) {
+        while (IfxAsclin_Asc_canWriteCount(&g_ascHandle3, 1, TIME_INFINITE) != TRUE);
+        IfxAsclin_Asc_blockingWrite(&g_ascHandle3, (unsigned char)buffer[i]);
+    }
+
+    // 소수점 추가
+    while (IfxAsclin_Asc_canWriteCount(&g_ascHandle3, 1, TIME_INFINITE) != TRUE);
+    IfxAsclin_Asc_blockingWrite(&g_ascHandle3, '.');
+
+    // 소수 부분을 문자열로 변환 (6자리까지)
+    fractionalPart *= 1000000; // 소수점 이하 6자리로 만들기
+    sprintf(buffer, "%06d", (int)fractionalPart); // 소수점 이하 부분을 문자열로 변환
+
+    // 버퍼에 소수 부분 쓰기
+    for (int i = 0; i < strlen(buffer); i++) {
+        while (IfxAsclin_Asc_canWriteCount(&g_ascHandle3, 1, TIME_INFINITE) != TRUE);
+        IfxAsclin_Asc_blockingWrite(&g_ascHandle3, (unsigned char)buffer[i]);
+    }
 }
 
 
