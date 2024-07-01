@@ -49,7 +49,7 @@ void core0_main(void)
 
     while(1)
     {
-        blinkLED();
+        //blinkLED();
 
     }
 }
